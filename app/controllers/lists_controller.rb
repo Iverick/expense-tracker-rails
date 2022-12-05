@@ -1,9 +1,11 @@
 class ListsController < ApplicationController
   before_action :set_list, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /lists or /lists.json
   def index
-    @lists = List.all
+    @lists = List.where("id = #{current_user.id}")
+    @lists.present? ? @lists : []
   end
 
   # GET /lists/1 or /lists/1.json

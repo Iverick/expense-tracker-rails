@@ -1,3 +1,8 @@
 <main class="container">
-  <p>hello</p>
+  <% @lists.each do |list| %>
+    <li>
+      <ul><%= list.name %></ul>
+      <ul><%= list.total_cost %></ul>
+    </li>
+  <% end %>
 </main>
