@@ -1,8 +1,10 @@
 <main class="container">
   <% @lists.each do |list| %>
-    <li>
-      <ul><%= list.name %></ul>
-      <ul><%= list.total_cost %></ul>
-    </li>
+    <%= link_to(list) do %>
+      <li>
+        <ul><%= list.name %></ul>
+        <ul><%= list.total_cost %></ul>
+      </li>
+     <% end %>
   <% end %>
 </main>
