@@ -4,7 +4,7 @@ class ListsController < ApplicationController
 
   # GET /lists or /lists.json
   def index
-    @lists = List.where("id = #{current_user.id}")
+    @lists = List.where("user_id = #{current_user.id}")
     @lists.present? ? @lists : []
   end
 
