@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :lists do
     resources :expenses
   end
+
+  get '/categories/:id', to: 'category#show', as: 'category_search'
 end

@@ -11,7 +11,6 @@ class ListsController < ApplicationController
   # GET /lists/1 or /lists/1.json
   def show
     @expenses = Expense.where("list_id = #{@list.id}")
-    @category_names = Category.pluck(:name)
   end
 
   # GET /lists/new

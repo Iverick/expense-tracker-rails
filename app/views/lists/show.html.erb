@@ -28,7 +28,13 @@
       <tr class="align-middle">
         <th scope="row"><%= index + 1 %></th>
         <td><%= expense.name %></td>
-        <td><%= @category_names[expense.category_id-1] %></td>
+        <td>
+          <% if current_user.id == @list.user_id %>
+            <%= link_to (expense.category.name), "/categories/#{expense.category.id}" %>
+          <% else %>
+            <%= expense.category.name %>
+          <% end %>
+        </td>
         <td><%= expense.amount %></td>
         <td><%= expense.cost %></td>
         <td><%= expense.total_cost %></td>
