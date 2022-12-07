@@ -15,14 +15,14 @@
     <div class="form-label fw-bold fs-6">
       <%= form.label :name, style: "display: block" %>
     </div>
-    <%= form.text_field :name, class: "form-control" %>
+    <%= form.text_field :name, class: "form-control", :required => "required" %>
   </div>
 
   <div class="mb-3">
     <div class="form-label fw-bold fs-6">
       <%= form.label :amount, style: "display: block" %>
     </div>
-    <%= form.number_field :amount, class: "form-control"  %>
+    <%= form.number_field :amount, :min => 1, class: "form-control", :required => "required" %>
   </div>
 
   <div class="mb-3">
