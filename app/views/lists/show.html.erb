@@ -5,8 +5,8 @@
 
   <% if current_user.id == @list.user_id %>
     <div class="d-flex h-50">
-      <%= link_to "Edit this list", edit_list_path(@list), class: "btn btn-sm btn-primary me-2" %>
-      <%= button_to "Destroy this list", @list, method: :delete, class: "btn btn-sm btn-danger" %>
+      <%= link_to "Edit List", edit_list_path(@list), class: "btn btn-sm btn-primary me-2" %>
+      <%= button_to "Remove List", @list, method: :delete, class: "btn btn-sm btn-danger" %>
     </div>
   <% end %>
 </div>
@@ -20,6 +20,7 @@
       <th scope="col">Amount</th>
       <th scope="col">Cost of Item</th>
       <th scope="col">Total Cost</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -31,6 +32,11 @@
         <td><%= expense.amount %></td>
         <td><%= expense.cost %></td>
         <td><%= expense.total_cost %></td>
+        <td class="col-1">
+          <% if current_user.id == @list.user_id %>
+            <%= button_to "Delete", [@list, expense], method: :delete, class: "btn btn-sm btn-danger" %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
     <tr>
@@ -40,6 +46,7 @@
       <td></td>
       <th scope="row">Total cost:</th>
       <td><%= @list.total_cost %></td>
+      <td></td>
     </tr>
   </tbody>
 </table>

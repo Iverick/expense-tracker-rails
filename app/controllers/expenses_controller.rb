@@ -50,14 +50,10 @@ class ExpensesController < ApplicationController
     end
   end
 
-  # DELETE /expenses/1 or /expenses/1.json
+  # DELETE list/{:list_id}/expenses/1 
   def destroy
     @expense.destroy
-
-    respond_to do |format|
-      format.html { redirect_to expenses_url, notice: "Expense was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to list_path(@list)
   end
 
   private
