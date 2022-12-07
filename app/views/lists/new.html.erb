@@ -1,9 +1,13 @@
-<h1>New list</h1>
+<div class="offset-3 mb-3">
+  <%= link_to 'Back', url_for(:back), class: "btn btn-sm btn-secondary" %>
+</div>
 
-<%= render "form", list: @list %>
+<div class="card offset-3 col-6">
+  <div class="card-header text-center">
+    <h2 class="mt-2">New List</h2>
+  </div>
 
-<br>
-
-<div>
-  <%= link_to "Back to lists", lists_path %>
+  <div class="card-body">
+    <%= render "form", list: @list %>
+  </div>
 </div>

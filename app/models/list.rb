@@ -6,6 +6,6 @@ class List < ApplicationRecord
     total_cost = 0
     self.expenses.each { |expense| total_cost += expense.cost * expense.amount }
 
-    total_cost
+    total_cost.round(2)
   end
 end

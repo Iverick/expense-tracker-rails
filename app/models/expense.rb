@@ -3,6 +3,6 @@ class Expense < ApplicationRecord
   belongs_to :category
 
   def total_cost
-    cost * amount
+    (cost * amount).round(2)
   end
 end

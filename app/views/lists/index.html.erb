@@ -1,13 +1,26 @@
-<p style="color: green"><%= notice %></p>
+<h2 class="mt-2">Your Lists</h2>
 
-<h1>Your Lists</h1>
-
-<div id="lists">
-  <% @lists.each do |list| %>
-    <%= link_to(list) do %>
-      <%= render list %>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Total Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @lists.each_with_index do |list, index| %>
+      <tr class="align-middle">
+        <th scope="row"><%= index + 1 %></th>
+        <td><h5>
+          <%= link_to(list) do %>
+            <%= list.name %>
+          <% end %>
+        </h5></td>
+        <td><%= list.total_cost %></td>
+      </tr>
     <% end %>
-  <% end %>
-</div>
+  </tbody>
+</table>
 
 <%= link_to "New list", new_list_path, class: "btn btn-sm btn-success" %>

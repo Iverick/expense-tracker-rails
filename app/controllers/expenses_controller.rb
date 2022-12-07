@@ -11,7 +11,7 @@ class ExpensesController < ApplicationController
   def show
   end
 
-  # GET /expenses/new
+  # GET list/{:list_id}/expenses/new
   def new
     @list = List.find(params[:list_id])
     @categories = Category.all
@@ -22,7 +22,7 @@ class ExpensesController < ApplicationController
   def edit
   end
 
-  # POST /expenses or /expenses.json
+  # POST list/{:list_id}/expenses or /expenses.json
   def create
     @expense = @list.expenses.create(expense_params)
 

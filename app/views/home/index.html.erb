@@ -1,10 +1,24 @@
 <main class="container">
-  <% @lists.each do |list| %>
-    <%= link_to(list) do %>
-      <li>
-        <ul><%= list.name %></ul>
-        <ul><%= list.total_cost %></ul>
-      </li>
-     <% end %>
-  <% end %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Total Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @lists.each_with_index do |list, index| %>
+        <tr 
+          class=<% if current_user.present? %>
+            <%= current_user.id == list.user_id ? 'bg-warning' : '' %>
+          <% end %>
+        >
+          <th scope="row"><%= index + 1 %></th>
+          <td><%= link_to(list) do %><%= list.name %><% end %></td>
+          <td><%= list.total_cost %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </main>
