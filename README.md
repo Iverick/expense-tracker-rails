@@ -39,3 +39,11 @@ Perform the next steps:
   `rails db:seed`
 - Start development server
   `rails s`
+
+- Run test from the root folder of the app
+
+  `bundle exec rspec`
+
+  - To run a specific test specify a path to the test file (for example)
+
+  `bundle exec rspec spec/requests/home_spec.rb`
