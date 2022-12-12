@@ -4,7 +4,7 @@ Expense tracking application powered by Rails framework.
 
 ### Visit this app
 
-Visit the following [URL](https://stormy-inlet-90293.herokuapp.com/) to try it.
+Visit the following [URL](http://expense-tracker-rails.fly.dev/) to try it.
 
 ### Run it on your local machine
 
