@@ -11,9 +11,9 @@
       </div>
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <%= link_to "Home", root_path, class: "nav-link active" %>
+          <%= link_to "Home", root_path, class: "nav-link #{nav_link_active?('home')}" %>
           <li class="nav-item">
-            <%= link_to "Your Lists", lists_path, class: "nav-link" %>
+            <%= link_to "Your Lists", lists_path, class: "nav-link #{nav_link_active?('lists')}" %>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
