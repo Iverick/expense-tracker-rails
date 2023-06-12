@@ -10,6 +10,7 @@ class ListsController < ApplicationController
   # GET /lists/1 or /lists/1.json
   def show
     @expenses = Expense.where("list_id = #{@list.id}")
+    @categories = Category.all
   end
 
   # GET /lists/new
