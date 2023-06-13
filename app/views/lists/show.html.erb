@@ -8,8 +8,8 @@
       <%= button_tag "Edit List", data: { "bs-toggle": "modal", "bs-target": "#edit-list-modal" }, class: "btn btn-sm btn-primary me-2" %>
       <%= render partial: "lists/edit_list_modal" %>
 
-      <%= button_tag "Remove List", data: { "bs-toggle": "modal", "bs-target": "#delete-list-modal" }, class: "btn btn-sm btn-danger" %>
-      <%= render partial: "lists/delete_list_modal" %>
+      <%= button_tag "Remove List", data: { "bs-toggle": "modal", "bs-target": "#delete-list-#{@list.id}-modal" }, class: "btn btn-sm btn-danger" %>
+      <%= render partial: "lists/delete_list_modal", locals: { list: @list } %>
     </div>
   <% end %>
 </div>

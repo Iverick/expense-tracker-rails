@@ -22,7 +22,8 @@
         </td>
         <td><%= list.total_cost %></td>
         <td class="col-1">
-          <%= button_to "Delete", list, method: :delete, class: "btn btn-sm btn-danger" %>
+          <%= button_tag "Delete", data: { "bs-toggle": "modal", "bs-target": "#delete-list-#{list.id}-modal" }, class: "btn btn-sm btn-danger" %>
+          <%= render partial: "lists/delete_list_modal", locals: { list: list } %>
         </td>
       </tr>
     <% end %>
