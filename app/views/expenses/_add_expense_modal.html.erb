@@ -1,0 +1,16 @@
+<div class="modal" id="new-expense-modal" tabindex="-1" aria-labelledby="new-expense-modal-label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header border-bottom-0 justify-content-start">
+        <button type="button" class="close-modal-btn btn-close mx-0" data-bs-dismiss="modal" aria-label="Close">
+        </button>
+        <div class="d-flex w-100 justify-content-center">
+          <h3 class="mb-0">New Expense</h3>
+        </div>
+      </div>
+      <div class="modal-body pb-4">
+        <%= render "expenses/form", expense: Expense.new %>
+      </div>
+    </div>
+  </div>
+</div>
