@@ -5,7 +5,8 @@
 
   <% if users_list? %>
     <div class="d-flex h-50">
-      <%= link_to "Edit List", edit_list_path(@list), class: "btn btn-sm btn-primary me-2" %>
+      <%= button_tag "Edit List", data: { "bs-toggle": "modal", "bs-target": "#edit-list-modal" }, class: "btn btn-sm btn-primary me-2" %>
+      <%= render partial: "lists/edit_list_modal" %>
 
       <%= button_tag "Remove List", data: { "bs-toggle": "modal", "bs-target": "#delete-list-modal" }, class: "btn btn-sm btn-danger" %>
       <%= render partial: "lists/delete_list_modal" %>

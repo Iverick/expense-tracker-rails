@@ -13,11 +13,13 @@
     <% @lists.each_with_index do |list, index| %>
       <tr class="align-middle">
         <th scope="row"><%= index + 1 %></th>
-        <td><h5>
-          <%= link_to(list) do %>
-            <%= list.name %>
-          <% end %>
-        </h5></td>
+        <td>
+          <h5 class="mb-0">
+            <%= link_to(list) do %>
+              <%= list.name %>
+            <% end %>
+          </h5>
+        </td>
         <td><%= list.total_cost %></td>
         <td class="col-1">
           <%= button_to "Delete", list, method: :delete, class: "btn btn-sm btn-danger" %>
